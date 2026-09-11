@@ -1,0 +1,26 @@
+{
+  "name": "healthcare-runtime",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "康养智能体 Runtime — 基于 @earendil-works/pi-agent-core 的可嵌入式医疗/康养 Agent Runtime，自带 Guideline retrieval(RAG) 与 Risk Calculator，支持全科/专科子智能体编排。",
+  "bin": {
+    "healthcare-runtime": "cli/main.js"
+  },
+  "scripts": {
+    "start": "node cli/main.js serve",
+    "chat": "node cli/main.js chat",
+    "build:rag": "python scripts/build_rag.py --sources ../../task2 ../../task3 --out data/rag",
+    "service": "python scripts/service.py --rag data/rag",
+    "bootstrap": "node scripts/bootstrap.js",
+    "doctors": "node cli/main.js doctors"
+  },
+  "engines": {
+    "node": ">=22.19.0"
+  },
+  "dependencies": {
+    "@earendil-works/pi-ai": "^0.85.1",
+    "@earendil-works/pi-agent-core": "^0.85.1",
+    "typebox": "^1.3.7"
+  }
+}

@@ -1,0 +1,6 @@
+node_modules/
+data/rag/
+data/chunks/
+data/distill/
+.env
+*.log
